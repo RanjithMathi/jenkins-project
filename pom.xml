@@ -57,7 +57,7 @@
         </exclusion>
       </exclusions>
     </dependency> -->
-    <!-- We need to include the javax.servlet API specs, the implementation 
+    <!-- We need to include the javax.servlet API specs, but not working in jboss the implementation 
          will be provided by Wildfly / JBoss / Tomcat -->
     <dependency>
       <groupId>javax.servlet</groupId>
