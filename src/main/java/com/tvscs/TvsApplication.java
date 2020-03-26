@@ -23,7 +23,7 @@ public class TvsApplication extends SpringBootServletInitializer {
 	@GetMapping(value = "/getJenkins")
 	public String getjenkins() {
      
-		return "jenkins value";
+		return "jenkins value===>";
 	}
 }
   
