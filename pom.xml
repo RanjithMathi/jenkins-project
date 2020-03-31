@@ -57,8 +57,8 @@
         </exclusion>
       </exclusions>
     </dependency> -->
-    <!-- We need to include the javax.servlet API specs, but not working in jboss the implementation 
-         will be provided by Wildfly / JBoss / Tomcat only working in server and onlyy-->
+    <!-- We need to include the javax.servlet API specs, the implementation 
+         will be provided by Wildfly / JBoss / Tomcat -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -72,6 +72,36 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-pmd-plugin</artifactId>
+  <version>3.4</version>
+  <dependencies>
+    <dependency>
+      <groupId>de.chw</groupId>
+      <artifactId>pmd.ruleset</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+     </dependency>
+  </dependencies>
+  <configuration>
+    <rulesets>
+      <ruleset>${project.basedir}/conf/quality-config/pmd-ruleset.xml</ruleset>
+    </rulesets>
+    <linkXref>true</linkXref>
+    <includeTests>true</includeTests>
+    <targetJdk>${java.version}</targetJdk>
+    <failOnViolation>true</failOnViolation>
+  </configuration>
+  <executions>
+    <execution>
+      <phase>test</phase>
+      <goals>
+        <goal>pmd</goal>
+        <goal>cpd</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
 		</plugins>
 	</build>
 
