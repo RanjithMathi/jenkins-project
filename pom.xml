@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.5.RELEASE</version>
-  		<relativePath/> <!-- lookup parent from repository this -->
+  		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>TVS</artifactId>
@@ -72,37 +72,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-pmd-plugin</artifactId>
-  <version>3.4</version>
-  <dependencies>
-    <dependency>
-      <groupId>de.chw</groupId>
-      <artifactId>pmd.ruleset</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-     </dependency>
-  </dependencies>
-  <configuration>
-    <rulesets>
-      <ruleset>${project.basedir}/conf/quality-config/pmd-ruleset.xml</ruleset>
-    </rulesets>
-    <linkXref>true</linkXref>
-    <includeTests>true</includeTests>
-    <targetJdk>${java.version}</targetJdk>
-    <failOnViolation>true</failOnViolation>
-  </configuration>
-  <executions>
-    <execution>
-      <phase>test</phase>
-      <goals>
-        <goal>pmd</goal>
-        <goal>cpd</goal>
-      </goals>
-    </execution>
-  </executions>
-</plugin>
 		</plugins>
 	</build>
+
 
 </project>
